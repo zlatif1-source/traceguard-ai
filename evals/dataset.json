@@ -1,0 +1,54 @@
+[
+  {
+    "name": "normal-login",
+    "logs": [
+      {"event_type": "successful_login", "user": "analyst", "source_ip": "10.0.0.8"},
+      {"event_type": "logout", "user": "analyst", "source_ip": "10.0.0.8"}
+    ],
+    "expected_severity": "info",
+    "expected_techniques": []
+  },
+  {
+    "name": "brute-force",
+    "logs": [
+      {"event_type": "failed_login", "user": "admin", "source_ip": "192.0.2.10"},
+      {"event_type": "failed_login", "user": "admin", "source_ip": "192.0.2.10"},
+      {"event_type": "failed_login", "user": "root", "source_ip": "192.0.2.10"},
+      {"event_type": "failed_login", "user": "admin", "source_ip": "192.0.2.10"},
+      {"event_type": "failed_login", "user": "root", "source_ip": "192.0.2.10"}
+    ],
+    "expected_severity": "high",
+    "expected_techniques": ["T1110"]
+  },
+  {
+    "name": "account-takeover-chain",
+    "logs": [
+      {"event_type": "failed_login", "user": "student", "source_ip": "198.51.100.9"},
+      {"event_type": "failed_login", "user": "student", "source_ip": "198.51.100.9"},
+      {"event_type": "failed_login", "user": "student", "source_ip": "198.51.100.9"},
+      {"event_type": "failed_login", "user": "student", "source_ip": "198.51.100.9"},
+      {"event_type": "failed_login", "user": "student", "source_ip": "198.51.100.9"},
+      {"event_type": "successful_login", "user": "student", "source_ip": "198.51.100.9"},
+      {"event_type": "admin_role_granted", "user": "student", "source_ip": "198.51.100.9"}
+    ],
+    "expected_severity": "critical",
+    "expected_techniques": ["T1110", "T1078", "T1098"]
+  },
+  {
+    "name": "possible-exfiltration",
+    "logs": [
+      {"event_type": "network_connection", "source_ip": "10.0.0.20", "destination_ip": "203.0.113.70", "bytes_out": 25000000}
+    ],
+    "expected_severity": "medium",
+    "expected_techniques": ["T1048"]
+  },
+  {
+    "name": "endpoint-malware",
+    "logs": [
+      {"event_type": "malware_alert", "user": "employee", "source_ip": "10.0.0.55", "message": "EDR detected malicious executable"}
+    ],
+    "expected_severity": "critical",
+    "expected_techniques": ["T1204"]
+  }
+]
+

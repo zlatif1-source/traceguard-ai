@@ -1,0 +1,45 @@
+[
+  {
+    "id": "nist-ir-containment",
+    "title": "NIST Incident Response: Containment and Recovery",
+    "url": "https://csrc.nist.gov/pubs/sp/800/61/r3/final",
+    "text": "Incident response should connect preparation, detection, response, and recovery. During containment, preserve evidence, limit damage, document decisions, and coordinate actions with the people responsible for the affected system. Recovery should restore normal operations carefully and include monitoring for recurrence."
+  },
+  {
+    "id": "cisa-account-security",
+    "title": "CISA: Use Strong Authentication",
+    "url": "https://www.cisa.gov/secure-our-world/use-strong-passwords",
+    "text": "Repeated login failures can indicate password guessing or credential attacks. Defenders should use strong unique passwords, multifactor authentication, login monitoring, rate limits, and account lockout controls that balance security with denial-of-service risk."
+  },
+  {
+    "id": "mitre-brute-force",
+    "title": "MITRE ATT&CK T1110: Brute Force",
+    "url": "https://attack.mitre.org/techniques/T1110/",
+    "text": "Brute force is the repeated use of authentication attempts to gain access to accounts. Useful evidence includes many failures from one source, attempts against multiple accounts, unusual timing, and a later successful login."
+  },
+  {
+    "id": "mitre-valid-accounts",
+    "title": "MITRE ATT&CK T1078: Valid Accounts",
+    "url": "https://attack.mitre.org/techniques/T1078/",
+    "text": "Adversaries may use compromised credentials to access systems while appearing to be a legitimate user. Review sessions, login origin, MFA events, account changes, and actions after authentication; revoke sessions and reset credentials when compromise is confirmed or strongly suspected."
+  },
+  {
+    "id": "cisa-malware-response",
+    "title": "CISA: Malware Incident Response",
+    "url": "https://www.cisa.gov/stopransomware/ive-been-hit-ransomware",
+    "text": "When malware is suspected, isolate affected systems, avoid destroying volatile evidence, identify the scope, preserve logs, and coordinate eradication and recovery. Reconnect systems only after the threat is understood and removed."
+  },
+  {
+    "id": "mitre-exfiltration",
+    "title": "MITRE ATT&CK T1048: Exfiltration Over Alternative Protocol",
+    "url": "https://attack.mitre.org/techniques/T1048/",
+    "text": "Unexpected outbound transfers can indicate data exfiltration. Analysts should validate the destination, protocol, volume, process, user, and business purpose and then preserve network and endpoint evidence before blocking activity when practical."
+  },
+  {
+    "id": "soc-evidence",
+    "title": "TraceGuard Evidence-First Analysis Guide",
+    "url": "https://github.com/zlatif1-source/traceguard-ai",
+    "text": "An analyst should separate observations from conclusions. Record the exact event, the detection rule it matched, the risk points added, uncertainty, and the next verification step. A transparent evidence chain makes an AI-assisted decision easier to audit and explain."
+  }
+]
+

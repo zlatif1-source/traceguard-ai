@@ -1,0 +1,16 @@
+services:
+  security-analyst:
+    build: .
+    ports:
+      - "8000:8000"
+    env_file:
+      - path: .env
+        required: false
+    volumes:
+      - analyst-data:/app/runtime
+    environment:
+      DATABASE_PATH: /app/runtime/security_analyst.db
+
+volumes:
+  analyst-data:
+

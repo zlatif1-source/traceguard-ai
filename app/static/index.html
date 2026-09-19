@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="TraceGuard AI — an explainable SOC copilot by Zain Latif." />
+    <title>TraceGuard AI</title>
+    <link rel="stylesheet" href="/static/styles.css" />
+  </head>
+  <body>
+    <div class="ambient ambient-one"></div>
+    <div class="ambient ambient-two"></div>
+    <main class="shell">
+      <header class="topbar">
+        <div class="brand">
+          <div class="brand-mark">TG</div>
+          <div>
+            <div class="brand-name">TraceGuard <span>AI</span></div>
+            <div class="byline">Built by Zain Latif · UMBC Computer Science + Cybersecurity</div>
+          </div>
+        </div>
+        <div id="health" class="status"><span></span> Checking system</div>
+      </header>
+
+      <section class="hero">
+        <div>
+          <p class="eyebrow">Explainable security intelligence</p>
+          <h1>See the evidence.<br /><span>Understand the decision.</span></h1>
+          <p class="hero-copy">
+            A SOC copilot that investigates security logs, maps behavior to MITRE ATT&amp;CK,
+            retrieves trusted guidance, and shows exactly how every risk point was earned.
+          </p>
+        </div>
+        <div class="hero-stat">
+          <div class="stat-number">4</div>
+          <div class="stat-label">Layers of analysis</div>
+          <div class="stat-list">Detection · RAG · Risk scoring · Teaching</div>
+        </div>
+      </section>
+
+      <section class="workspace card">
+        <div class="section-heading">
+          <div>
+            <p class="step">01 · INVESTIGATE</p>
+            <h2>Paste security events</h2>
+          </div>
+          <button id="load-sample" class="ghost-button">Load attack scenario</button>
+        </div>
+
+        <label for="question">Analyst question</label>
+        <input
+          id="question"
+          value="What happened, how serious is it, and what should the analyst do next?"
+        />
+
+        <label for="logs">Logs (JSON Lines or common SSH authentication logs)</label>
+        <textarea id="logs" spellcheck="false" placeholder='{"event_type":"failed_login", ...}'></textarea>
+
+        <div class="controls">
+          <fieldset>
+            <legend>Explanation style</legend>
+            <label class="choice active">
+              <input type="radio" name="explanation" value="teach_me" checked />
+              <span>Teach Me</span>
+            </label>
+            <label class="choice">
+              <input type="radio" name="explanation" value="analyst" />
+              <span>SOC Analyst</span>
+            </label>
+          </fieldset>
+          <fieldset>
+            <legend>Model</legend>
+            <label class="choice active">
+              <input type="radio" name="mode" value="demo" checked />
+              <span>Demo</span>
+            </label>
+            <label class="choice">
+              <input type="radio" name="mode" value="live" />
+              <span>Live AI</span>
+            </label>
+          </fieldset>
+          <button id="analyze" class="primary-button">Run investigation <span>→</span></button>
+        </div>
+        <p id="error" class="error" hidden></p>
+      </section>
+
+      <section id="results" hidden>
+        <div class="section-heading results-heading">
+          <div>
+            <p class="step">02 · EXPLAIN</p>
+            <h2>Investigation results</h2>
+          </div>
+          <div id="latency" class="latency"></div>
+        </div>
+
+        <div class="results-grid">
+          <article class="card risk-card">
+            <p class="card-label">Transparent risk score</p>
+            <div class="risk-layout">
+              <div id="risk-ring" class="risk-ring">
+                <div><strong id="risk-score">0</strong><small>/100</small></div>
+              </div>
+              <div>
+                <div id="severity" class="severity">INFO</div>
+                <p id="confidence" class="muted"></p>
+              </div>
+            </div>
+            <div id="risk-factors" class="risk-factors"></div>
+          </article>
+
+          <article class="card summary-card">
+            <p class="card-label">TraceGuard assessment</p>
+            <div id="answer" class="answer"></div>
+          </article>
+        </div>
+
+        <div class="results-grid lower-grid">
+          <article class="card">
+            <p class="card-label">Evidence → decision</p>
+            <div id="findings" class="findings"></div>
+          </article>
+          <article class="card">
+            <p class="card-label">Event timeline</p>
+            <div id="timeline" class="timeline"></div>
+          </article>
+        </div>
+
+        <article class="card response-card">
+          <p class="card-label">Recommended response</p>
+          <ol id="actions"></ol>
+        </article>
+
+        <article class="card sources-card">
+          <p class="card-label">Retrieved evidence</p>
+          <div id="sources" class="sources"></div>
+          <div id="metadata" class="metadata"></div>
+        </article>
+      </section>
+
+      <footer>
+        <span>TraceGuard AI</span> · Defensive security analysis with auditable evidence · Synthetic demo data only
+      </footer>
+    </main>
+    <script src="/static/app.js"></script>
+  </body>
+</html>
+

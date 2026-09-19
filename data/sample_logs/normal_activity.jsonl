@@ -1,0 +1,4 @@
+{"timestamp":"2026-09-18T09:00:00Z","event_type":"successful_login","user":"analyst","source_ip":"10.0.0.12","message":"Successful login with MFA"}
+{"timestamp":"2026-09-18T09:03:12Z","event_type":"file_access","user":"analyst","source_ip":"10.0.0.12","message":"Opened approved incident report"}
+{"timestamp":"2026-09-18T09:12:40Z","event_type":"logout","user":"analyst","source_ip":"10.0.0.12","message":"Normal logout"}
+

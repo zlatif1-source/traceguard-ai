@@ -1,0 +1,10 @@
+{"timestamp":"2026-09-18T14:02:10Z","event_type":"failed_login","user":"admin","source_ip":"203.0.113.42","country":"Unknown","message":"Invalid password for admin"}
+{"timestamp":"2026-09-18T14:02:14Z","event_type":"failed_login","user":"admin","source_ip":"203.0.113.42","country":"Unknown","message":"Invalid password for admin"}
+{"timestamp":"2026-09-18T14:02:19Z","event_type":"failed_login","user":"root","source_ip":"203.0.113.42","country":"Unknown","message":"Invalid password for root"}
+{"timestamp":"2026-09-18T14:02:23Z","event_type":"failed_login","user":"zlatif","source_ip":"203.0.113.42","country":"Unknown","message":"Invalid password for zlatif"}
+{"timestamp":"2026-09-18T14:02:29Z","event_type":"failed_login","user":"admin","source_ip":"203.0.113.42","country":"Unknown","message":"Invalid password for admin"}
+{"timestamp":"2026-09-18T14:02:34Z","event_type":"failed_login","user":"zlatif","source_ip":"203.0.113.42","country":"Unknown","message":"Invalid password for zlatif"}
+{"timestamp":"2026-09-18T14:02:41Z","event_type":"successful_login","user":"zlatif","source_ip":"203.0.113.42","country":"Unknown","message":"Successful login for zlatif"}
+{"timestamp":"2026-09-18T14:04:02Z","event_type":"admin_role_granted","user":"zlatif","source_ip":"203.0.113.42","message":"User zlatif added to administrators group"}
+{"timestamp":"2026-09-18T14:07:51Z","event_type":"network_connection","user":"zlatif","source_ip":"10.0.0.24","destination_ip":"198.51.100.17","bytes_out":18500000,"message":"Large outbound HTTPS transfer"}
+
