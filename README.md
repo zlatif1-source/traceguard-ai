@@ -1,5 +1,7 @@
 # TraceGuard AI
 
+[**Launch the Live Demo →**](https://traceguard-ai.onrender.com)
+
 **An explainable SOC copilot that shows its work.**
 
 TraceGuard AI analyzes security logs, identifies attack patterns, maps evidence to MITRE ATT&CK,
@@ -23,7 +25,7 @@ important security decisions deterministic and auditable:
 4. The retriever selects relevant defensive sources from a local vector store.
 5. The LLM explains the evidence but is not allowed to invent the evidence.
 
-The included **demo mode works with no API key**, so recruiters can try the full workflow locally.
+The included **demo mode works with no API key**, so recruiters can try the full workflow safely in the [public live demo](https://traceguard-ai.onrender.com).
 
 ## Architecture
 
@@ -165,7 +167,6 @@ would calibrate weights using historical incident data and analyst feedback.
 - Add PostgreSQL + pgvector for larger knowledge bases
 - Import Sigma detection rules
 - Add analyst feedback and evaluation history
-- Deploy a public read-only demo with rate limits
 - Add an MCP server so other agents can call TraceGuard's analysis tools
 
 ## Responsible use
