@@ -50,6 +50,12 @@ def sample_logs() -> dict[str, str]:
     return {"logs": path.read_text(encoding="utf-8")}
 
 
+@app.get("/api/sample/php2shell", response_model=dict[str, str])
+def sample_php2shell() -> dict[str, str]:
+    path = PROJECT_ROOT / "data" / "sample_logs" / "php2shell.jsonl"
+    return {"logs": path.read_text(encoding="utf-8")}
+
+
 @app.post("/api/analyze", response_model=AnalyzeResponse)
 def analyze(request: AnalyzeRequest) -> AnalyzeResponse:
     try:
