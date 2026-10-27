@@ -40,6 +40,11 @@
     "title": "TraceGuard Evidence-First Analysis Guide",
     "url": "https://github.com/zlatif1-source/traceguard-ai",
     "text": "An analyst should separate observations from conclusions. Record the exact event, the detection rule it matched, the risk points added, uncertainty, and the next verification step. A transparent evidence chain makes an AI-assisted decision easier to audit and explain."
+  },
+  {
+    "id": "php2shell-oct-2026",
+    "title": "PHP2Shell (October 2026): PHP Runtime Security Update",
+    "url": "https://www.php.net/downloads.php",
+    "text": "PHP2Shell: CVE-2026-109618 and CVE-2026-109619 are critical PHP runtime security issues. Upstream security-fixed releases include PHP 8.2.35, 8.3.36, 8.4.27, and 8.5.12. For versions below these thresholds, update PHP or verify a supported downstream vendor backport. Upgrade end-of-life PHP branches to supported versions. Use explicit software inventory and asset exposure context to prioritize remediation; vulnerable version evidence alone does not prove exploitation. Reference the PHP project's release announcements and vendor advisories before applying changes."
   }
 ]
-
