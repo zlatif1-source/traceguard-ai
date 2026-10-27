@@ -42,6 +42,19 @@ flowchart TD
     H --> I
 ```
 
+## October 2026: PHP2Shell advisory support
+
+TraceGuard now recognizes explicit PHP software inventory events and flags runtimes below
+upstream PHP2Shell fixes (CVE-2026-109618 and CVE-2026-109619): PHP 8.2.35,
+8.3.36, 8.4.27, and 8.5.12. A version observation is a patch-priority signal,
+**not evidence that a host has been exploited**. Verify vendor backports and upgrade
+unsupported releases. Click **PHP2Shell patch scenario** in the public demo to try a
+synthetic example. This does not patch third-party PHP servers, and the TraceGuard
+backend itself runs Python rather than PHP.
+
+Dependency update pull requests for Python, Docker, and GitHub Actions are now enabled
+through Dependabot; updates still require CI review and merge.
+
 ## Features
 
 - JSON Lines and common SSH authentication-log parsing
