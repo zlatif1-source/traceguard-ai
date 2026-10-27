@@ -34,3 +34,14 @@ def test_analyze_endpoint_returns_explainable_result() -> None:
     assert body["severity"] == "critical"
     assert body["risk_score"] == 50
     assert body["findings"][0]["mitre_technique"] == "T1204"
+
+
+def test_php2shell_sample_endpoint_and_dashboard_button() -> None:
+    dashboard = client.get("/")
+    response = client.get("/api/sample/php2shell")
+
+    assert dashboard.status_code == 200
+    assert 'id="load-php2shell"' in dashboard.text
+    assert response.status_code == 200
+    assert "software_inventory" in response.json()["logs"]
+    assert "8.4.26" in response.json()["logs"]
