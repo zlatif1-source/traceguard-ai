@@ -116,6 +116,13 @@ async function analyze() {
 }
 
 $("#load-sample").addEventListener("click", loadSample);
+$("#load-php2shell").addEventListener("click", async () => {
+  const response = await fetch("/api/sample/php2shell");
+  if (!response.ok) return;
+  const data = await response.json();
+  $("#logs").value = data.logs;
+  $("#question").value = "Is this PHP runtime affected by PHP2Shell, and which patch should be applied?";
+});
 $("#analyze").addEventListener("click", analyze);
 checkHealth();
 loadSample();
