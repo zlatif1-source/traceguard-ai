@@ -44,7 +44,10 @@
             <p class="step">01 · INVESTIGATE</p>
             <h2>Paste security events</h2>
           </div>
-          <button id="load-sample" class="ghost-button">Load attack scenario</button>
+          <div class="sample-buttons">
+            <button id="load-php2shell" class="ghost-button">PHP2Shell patch scenario</button>
+            <button id="load-sample" class="ghost-button">Load attack scenario</button>
+          </div>
         </div>
 
         <label for="question">Analyst question</label>
@@ -53,7 +56,7 @@
           value="What happened, how serious is it, and what should the analyst do next?"
         />
 
-        <label for="logs">Logs (JSON Lines or common SSH authentication logs)</label>
+        <label for="logs">Logs (JSON Lines, PHP software inventory, or common SSH authentication logs)</label>
         <textarea id="logs" spellcheck="false" placeholder='{"event_type":"failed_login", ...}'></textarea>
 
         <div class="controls">

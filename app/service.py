@@ -150,6 +150,17 @@ class SecurityAnalystService:
     def _recommended_actions(analysis: LogAnalysis) -> list[str]:
         titles = " ".join(finding.title.lower() for finding in analysis.findings)
         actions: list[str] = []
+        if "php2shell" in titles:
+            actions.extend(
+                [
+                    "Patch the affected PHP runtime to the upstream fixed release or verify "
+                    "a supported vendor backport; upgrade unsupported PHP branches.",
+                    "Identify internet-facing deployments, restrict exposure where feasible, "
+                    "and preserve web server and process logs for investigation.",
+                    "After patching, verify installed runtime versions and investigate any "
+                    "separate evidence of exploitation; version alone is not proof.",
+                ]
+            )
         if "brute-force" in titles or "repeated failures" in titles:
             actions.extend(
                 [

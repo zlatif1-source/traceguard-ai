@@ -5,6 +5,7 @@ from dataclasses import dataclass
 from datetime import datetime
 
 from app.models import Finding, RiskFactor, TimelineEvent
+from app.php_advisories import detect_php2shell_exposures, is_unpatched_php_inventory
 
 SEVERITY_RANK = {"info": 0, "low": 1, "medium": 2, "high": 3, "critical": 4}
 
@@ -121,6 +122,10 @@ def analyze_logs(raw_logs: str) -> LogAnalysis:
             )
             risk_factors.append(RiskFactor(reason="Large outbound transfer", points=20))
 
+    php_findings, php_factors = detect_php2shell_exposures(events)
+    findings.extend(php_findings)
+    risk_factors.extend(php_factors)
+
     for source_ip, count in failed_by_ip.items():
         if count >= 5:
             severity = "critical" if count >= 20 else "high"
@@ -187,7 +192,7 @@ def analyze_logs(raw_logs: str) -> LogAnalysis:
             "admin_role_granted",
             "malware_alert",
             "endpoint_malware",
-        }
+        } or is_unpatched_php_inventory(event)
         timeline.append(
             TimelineEvent(
                 order=order,
